@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Results summary component</title>
+    <style>
+        body {
+            font-family: "Hanken Grotesk", sans-serif;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .box {
+            flex-basis: 50%;
+            padding: 40px;
+        }
+
+        .outer-box {
+            width: 600px;
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5% auto 0;
+        }
+
+        .left-score-box {
+            border-radius: 15px;
+            justify-content: space-between;
+            background: linear-gradient(to bottom, hsl(256, 100%, 67%), hsl(241, 81%, 54%));
+            color: white;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .right-score-box {
+            display: flex;
+            flex-direction: column;
+            color: hsl(224, 30%, 27%);
+            gap: 32px;
+
+        }
+
+        .category {
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .category-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .category-name {
+            display: flex;
+            gap: 5px;
+        }
+
+        .flex-column-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .total-score {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #4a24cf;
+            background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+        }
+
+        .round-score {
+            font-size: 48px;
+        }
+
+        .font-grey {
+            color: hsl(256, 6%, 80%);
+        }
+
+        .font-black {
+            color: hsl(0, 0%, 30%);
+        }
+
+        .comment-score {
+            gap: 10%;
+        }
+
+        .point-score {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reaction-score {
+            color: hsl(0, 70%, 60%);
+            background-color: hsl(0, 100%, 95%);
+        }
+
+        .memory-score {
+            color: hsl(60, 70%, 60%);
+            background-color: hsl(60, 100%, 95%);
+        }
+
+        .verbal-score {
+            color: hsl(120, 70%, 60%);
+            background-color: hsl(120, 100%, 95%);
+        }
+
+        .visual-score {
+            color: hsl(280, 70%, 60%);
+            background-color: hsl(280, 100%, 95%);
+        }
+
+        .btn-continue {
+            color: white;
+            background-color: hsl(224, 30%, 27%);
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            margin-top: 2rem;
+        }
+
+        .btn-continue:hover {
+            background-color: hsl(252, 100%, 67%)
+        }
+
+        @media (max-width: 480px) {
+            body {
+                width: auto;
+                object-fit: fill;
+                display: flex;
+                flex-direction: column;
+                margin: 0px;
+            }
+
+            .box {
+                width: 375px;
+                flex-basis: 100%;
+                padding: 0px;
+            }
+
+            .outer-box {
+                width: auto;
+                margin: 0px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .category {
+                object-fit: fill;
+            }
+
+            .left-score-box {
+                border-radius: 0px 0px 20px 20px;
+            }
+
+            .attribution {
+                padding: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="outer-box">
+            <div class="box left-score-box flex-column-center">
+                <h2 class="font-grey">Your Result</h2>
+                <div class="total-score flex-column-center">
+                    <h1 class="round-score">76</h1>
+                    <h5 class="font-grey">of 100</h5>
+                </div>
+                <h2 class="comment-score">Great</h2>
+                <p class="font-grey">You scored higher than 65% of the people who have taken these tests.</p>
+            </div>
+            <div class="box right-score-box">
+                <h3>Summary</h3>
+                <div class="category-box">
+                    <div class="category reaction-score">
+                        <div class="category-name">
+                            <img src="assets\images\icon-reaction.svg" alt="icon-reaction">
+                            <h4>Reaction</h4>
+                        </div>
+                        <h4 class="font-black">80 <span class="font-grey">/ 100</span></h4>
+                    </div>
+                    <div class="category memory-score">
+                        <div class="category-name">
+                            <img src="assets\images\icon-memory.svg" alt="icon-reaction">
+                            <h4>Memory</h4>
+                        </div>
+                        <h4 class="font-black">92 <span class="font-grey">/ 100</span></h4>
+                    </div>
+                    <div class="category verbal-score">
+                        <div class="category-name">
+                            <img src="assets\images\icon-verbal.svg" alt="icon-reaction">
+                            <h4>Verbal</h4>
+                        </div>
+                        <h4 class="font-black">61 <span class="font-grey">/ 100</span></h4>
+                    </div>
+                    <div class="category visual-score">
+                        <div class="category-name">
+                            <img src="assets\images\icon-visual.svg" alt="icon-reaction">
+                            <h4>Visual</h4>
+                        </div>
+                        <h4 class="font-black">72 <span class="font-grey">/ 100</span></h4>
+                    </div>
+                    <button class="btn-continue">Continue</button>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="#">Abdullah Addaba</a>.
+        </div>
+    </footer>
+
+</body>
+
+</html>
